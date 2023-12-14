@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frikizon</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('a.current-page').on('click', function(event) {
+              event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+              event.stopPropagation(); // Detiene la propagación del evento
+              return false;
+          });
+      });
+  </script>
+    <style>
+      body {
+        background-color: #e6e6e6;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+     
+      header {
+        background-color: #0f1111;
+        padding-top: 14px;
+      }
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #232f3e;
+      }
+      nav li {
+        float: left;
+      }
+
+      nav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+      }
+      nav li a:hover {
+        background-color: #111111;
+      }
+      #head {
+        color: #fff;
+      }
+      #head .top {
+        display: flex;
+      }
+      #head .user {
+        width: 175px;
+      }
+      header .logo {
+        margin: 0px 15px 15px;
+      }
+      .logo {
+        color: #fff;
+      }
+      .logo h1 {
+        margin: 0;
+      }
+      #head .pinpoint {
+        filter: invert(1);
+        width: 20px;
+        margin: 8px 3px 0 0;
+        float: left;
+      }
+      #head input {
+        width: 800px;
+    height: 35px;
+    margin-top: 0;
+    border: none;
+      }
+      #head .search {
+        display: flex;
+            }
+      .selector {
+        width: 161px;
+    font-size: 13px;
+    padding: 11px;
+    background-color: #ddd;
+    border-radius: 5px 0 0 5px;
+    color: #333;
+    height: 15px;
+      }
+      .search-icon img {
+        margin: -2px 0 0 3px;
+        height: 20px;
+        width: 20px;
+            }
+      .search-icon {
+        width: 25px;
+    padding: 11px;
+    background-color: #ffa923;
+    border-radius: 0 5px 5px 0;
+    color: #333;
+    height: 15px;
+      }
+      .img-toprgt {
+        height: 38px;
+
+      }
+      #container {
+        width: 90%;
+        margin: 0 auto;
+      }
+      .line {
+        display: flex;
+        flex-direction: row;
+      }
+      .block {
+        width: 350px;
+        background-color: white;
+        margin: 10px;
+        padding: 15px;
+      }
+      .block h3 {
+        margin: 5px;
+      }
+      .block .wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .block a {
+        text-decoration: none;
+      }
+      .block a .tit-prod {
+        color: #111111;
+      }
+      .element {
+        margin: 0 auto;
+      }
+      .element img {
+        max-width: 125px;
+        max-height: 125px;
+      }
+      .element .tit-prod {
+        margin: 0px;
+      }
+      .double-block {
+        width: 745px;
+        background-color: white;
+        margin: 10px;
+        padding: 15px;
+      }
+      .full-block {
+        width: 1550px;
+        background-color: white;
+        margin: 10px;
+        padding: 15px;
+      }
+      #slider {
+        margin: 0 auto;
+        width: 1575px;
+        height: 287px;
+        background-size: contain;
+        background-image: url(img/slider.webp);
+      }
+      .full-block-wrap {
+        display: flex;
+        flex-direction: row;
+      }
+      .round {
+        width: 230px;
+        margin: 15px;
+      }
+      .round img {
+        max-width: -webkit-fill-available;
+        margin: 10px;
+        border-radius: 100%;
+      }
+      h3.tit-round {
+        text-align: center;
+      }
+      div#backtotop {
+        color: #fff;
+        background-color: #37475a;
+        text-align: center;
+        padding: 10px;
+      }
+      .columns-wrap {
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        justify-content: space-evenly;
+      }
+      footer {
+        background-color: #232f3e;
+        padding-bottom: 30px;
+      }
+      footer .columns-wrap ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        color: #fff;
+      }
+      footer .columns-wrap h4 {
+        color: #fff;
+      }
+      footer .logo {
+        text-align: center;
+        padding: 0px;
+        border-top: 1px solid #ddd;
+        margin: 30px;
+      }
+      #countries ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-color: #232f3e;
+        text-align: center;
+      }
+
+      #countries ul li {
+        display: inline;
+        color: white;
+        text-align: center;
+        padding: 5px;
+        text-decoration: none;
+      }
+      .footer-column a,
+      #backtotop a {
+        text-decoration: none;
+        color: #fff;
+      }
+      #frikivideo {
+        background-image: url("img/clerks.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      input#twotabsearchtextbox {
+        padding: 10px;
+        width: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="head">
+      <div class="top">
+        <div class="logo"><h1>Frikizon</h1></div>
+        <div class="user">
+          <img src="img/pinpoint.png" alt="" class="pinpoint" />Enviar a
+          Alejandro <br />
+          <span style="font-weight: bold">El Puerto...11500</span>
+        </div>
+        <div class="search">
+        <div class="selector">Todos los departamentos</div><form action="">
+          <input type="text" />
+        </form>
+        <div class="search-icon"><img src="img/search.png" alt=""></div>
+      </div>
+      <img class="img-toprgt" src="img/imagen-der.png" alt="">
+      </div>
+      <nav id="menu">
+        <ul>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer">Todo</a>
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer">Ofertas</a>
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              >Frikizon Basics</a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              >Volver a comprar</a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              >Frikizon Business</a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              >Historial de navegación</a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              >Tarjetas regalo</a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              >Los más vendidos</a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              >Ideas para regalos</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="slider">
+      <img src="" alt="" />
+    </div>
+    <div id="container">
+      <div class="line">
+        <div id="continua" class="block">
+          <h3>Continúa donde lo dejaste</h3>
+          <div class="wrap">
+            <div class="element">
+              <a href="#">
+                <img src="img/green-lantern.jpg" alt="Linterna verde" />
+                <h4 class="tit-prod">Linterna Verde</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/strange-cloack.jpeg" alt="Saeta de fuego" />
+                <h4 class="tit-prod">Capa de levitación</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/ironman-mask.jpg" alt="Casco Iron Man" />
+                <h4 class="tit-prod">Casco Iron Man</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/tempad.webp" alt="Tempad" />
+                <h4 class="tit-prod">Tempad</h4>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="more">Ver más</a>
+        </div>
+        <div id="sigue" class="block">
+          <h3>Sigue comprando</h3>
+          <div class="wrap">
+            <div class="element">
+              <a href="#">
+                <img src="img/flash-ring.jpeg" alt="Nombre" />
+                <h4 class="tit-prod">Anillo Flash</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/gorra-monkey.jpg" alt="Nombre" />
+                <h4 class="tit-prod">Gorra Monkey Island</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/minecraft-pickaxe.webp" alt="Nombre" />
+                <h4 class="tit-prod">Pico Minecraft</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/latigo-indiana.jpg" alt="Nombre" />
+                <h4 class="tit-prod">Latigo Indiana Jones</h4>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="more">Ver más</a>
+        </div>
+        <div id="gobiernalos" class="block">
+          <h3>Gobiernalos a todos</h3>
+          <div class="wrap">
+            <div class="element">
+              <a href="#">
+                <img src="img/the-one-ring.jpg" alt="Nombre" />
+                <h4 class="tit-prod">Anillo Único</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/dragonballs.jpg" alt="Nombre" />
+                <h4 class="tit-prod">Bolas de Dragón</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/infinity-gauntlet.webp" alt="Nombre" />
+                <h4 class="tit-prod">Guantelete del Infinito</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/sauco-wand.jpg" alt="Nombre" />
+                <h4 class="tit-prod">Varita de Sauco</h4>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="more">Ver más</a>
+        </div>
+        <div id="herramientas" class="block">
+          <h3>Herramientas de Disuasión</h3>
+          <div class="wrap">
+            <div class="element">
+              <a href="#">
+                <img src="img/mjolnir.webp" alt="Nombre" />
+                <h4 class="tit-prod">Mjolnir</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/minecraft-sword.jpeg" alt="Nombre" />
+                <h4 class="tit-prod">Espada Minecraft</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/matazombies.jpg" alt="Nombre" />
+                <h4 class="tit-prod">Matazombies</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/lightsaber.webp" alt="Nombre" />
+                <h4 class="tit-prod">Sable Laser Luke</h4>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="more">Ver más</a>
+        </div>
+      </div>
+      <div class="line">
+        <div id="frikivideo" class="double-block">
+          <h3><a href="#">Ver en Friki Video</a></h3>
+        </div>
+        <div id="companions" class="block">
+          <h3>Compañeros de aventuras</h3>
+          <div class="wrap">
+            <div class="element">
+              <a href="#">
+                <img src="img/buzz-lightyear.webp" alt="Nombre" />
+                <h4 class="tit-prod">Buzz Lightyeat</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/r2d2.webp" alt="Nombre" />
+                <h4 class="tit-prod">R2D2</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/mooncake.webp" alt="Nombre" />
+                <h4 class="tit-prod">Mooncake</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/mordisquitos.png" alt="Nombre" />
+                <h4 class="tit-prod">Mordisquitos</h4>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="more">Ver más</a>
+        </div>
+        <div id="desplazate" class="block">
+          <h3>Desplázate como quieres</h3>
+          <div class="wrap">
+            <div class="element">
+              <a href="#">
+                <img src="img/firebolt.jpg" alt="Nombre" />
+                <h4 class="tit-prod">Saeta de Fuego</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/portal-gun.jpg" alt="Nombre" />
+                <h4 class="tit-prod">Pistola de Portales</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/webshooter.jpg" alt="Nombre" />
+                <h4 class="tit-prod">Lanza Telarañas</h4>
+              </a>
+            </div>
+            <div class="element">
+              <a href="#">
+                <img src="img/magic-carpet.jpg" alt="Nombre" />
+                <h4 class="tit-prod">Alfombra mágica</h4>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="more">Ver más</a>
+        </div>
+      </div>
+      <div class="line">
+        <div class="full-block block">
+          <h3>Regalos de Apocalipsis para todos</h3>
+          <div class="full-block-wrap">
+            <div class="round">
+              <img src="img/zombie.png" alt="" />
+              <h3 class="tit-round">Zombies</h3>
+            </div>
+            <div class="round">
+              <img src="img/robot.jpg" alt="" />
+              <h3 class="tit-round">Robots</h3>
+            </div>
+            <div class="round">
+              <img src="img/alien.webp" alt="" />
+              <h3 class="tit-round">Extraterrestres</h3>
+            </div>
+            <div class="round">
+              <img src="img/mummy.webp" alt="" />
+              <h3 class="tit-round">Momias</h3>
+            </div>
+            <div class="round">
+              <img src="img/demon.png" alt="" />
+              <h3 class="tit-round">Demonios</h3>
+            </div>
+            <div class="round">
+              <img src="img/cat.webp" alt="" />
+              <h3 class="tit-round">Gatitos</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="backtotop"><a href="#">Volver arriba</a></div>
+      <div class="columns-wrap">
+        <div class="footer-column">
+          <h4>Conócenos</h4>
+          <ul>
+            <li><a href="#">Trabajar en Frikizon</a></li>
+            <li><a href="#">Sobre Frikizon</a></li>
+            <li><a href="#">Sostenibilidad</a></li>
+            <li><a href="#">Frikizon Magic</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Conócenos</h4>
+          <ul>
+            <li><a href="#">Trabajar en Frikizon</a></li>
+            <li><a href="#">Sobre Frikizon</a></li>
+            <li><a href="#">Sostenibilidad</a></li>
+            <li><a href="#">Frikizon Magic</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Conócenos</h4>
+          <ul>
+            <li><a href="#">Trabajar en Frikizon</a></li>
+            <li><a href="#">Sobre Frikizon</a></li>
+            <li><a href="#">Sostenibilidad</a></li>
+            <li><a href="#">Frikizon Magic</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Conócenos</h4>
+          <ul>
+            <li><a href="#">Trabajar en Frikizon</a></li>
+            <li><a href="#">Sobre Frikizon</a></li>
+            <li><a href="#">Sostenibilidad</a></li>
+            <li><a href="#">Frikizon Magic</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="logo"><h3>Frikizon</h3></div>
+      <div id="countries">
+        <ul>
+          <li>Australia</li>
+          <li>Alemania</li>
+          <li>Brasil</li>
+          <li>Canadá</li>
+          <li>China</li>
+          <li>Estados Unidos</li>
+          <li>Francia</li>
+          <li>India</li>
+          <li>Italia</li>
+          <li>Japón</li>
+          <li>México</li>
+          <li>Países Bajos</li>
+          <li>Polonia</li>
+          <li>Emiratos Árabes Unidos</li>
+          <li>Reino Unido</li>
+          <li>Singapur</li>
+          <li>Turquía</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

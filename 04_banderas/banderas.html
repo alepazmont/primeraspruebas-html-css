@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bandera {
+        border: 2px black solid;
+        width: 300px;
+        height: 200px;
+        position: relative;
+        margin: 20px
+      }
+      .bandera-avion {
+        width: 300px;
+        height: 300px;
+        border: 2px black solid;
+        position: relative;
+        border-radius: 100%;
+      }
+      .franja-hor-grande {
+        position: relative;
+        height: 50%;
+      }
+      .franja-hor-peq {
+        position: relative;
+        height: 25%;
+      }
+      .franja-hor-tercio {
+        position: relative;
+        height: 33.3%;
+      }
+      .franja-ver-grande {
+        position: relative;
+        height: 100%;
+        width: 50%;
+      }
+      .franja-ver-pequeña {
+        position: relative;
+        height: 100%;
+        width: 25%;
+      }
+      .franja-ver-tercio {
+        position: relative;
+        height: 100%;
+        width: 33.3%;
+      }
+      .franja-hor-tercio.abajo {
+    bottom: -67px;
+}
+      .centro {
+        position: relative;
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        top: 50px;
+        left: 50px;
+      }
+      .medio {
+        position: relative;
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+        top: 50px;
+        left: 50px;
+      }
+      .arriba {
+        top: 0px;
+      }
+      .abajo {
+        bottom: -100px;
+      }
+      .izq {
+        left: 0px;
+      }
+      .der {
+        left: 200px;
+        top: -200px;
+      }
+      .red {
+        background-color: red;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .skyblue {
+        background-color: cornflowerblue;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .green {
+        background-color: green;
+      }
+      .purple {
+        background-color: purple;
+      }
+      .white {
+        background-color: white;
+      }
+      .escudo {
+          position: relative;
+          top: -45px;
+          left: 100px;
+          width: 83px;
+      }
+      .escudo-tercio {
+          position: relative;
+          top: -75px;
+          left: 100px;
+          width: 83px;
+      }
+.linea {
+  position: relative;
+}
+      .ver {
+    height: 100%;
+    width: 40px;
+}
+.hor {
+  height: 40px;
+    width: 100%;
+
+}
+.med {
+top: -115px
+}
+.barra {
+  position: relative;
+    height: 15px;
+    margin-bottom: 16px;
+}
+.cuadrado {
+  position: relative;
+    height: 108px;
+    width: 147px;
+    top: -217px;
+}
+.estrellas {
+  width: 133px;
+    position: relative;
+    top: -320px;
+    left: 5px;
+  filter: invert(1);
+}
+    </style>
+  </head>
+  <body>
+    <div id="argentina" class="bandera white">
+      <div class="franja-hor-peq skyblue arriba"></div>
+      <div class="franja-hor-peq skyblue abajo"></div>
+      <img class="escudo" src="img/argentina.jpg" />
+    </div>
+    <div id="espana" class="bandera yellow">
+      <div class="franja-hor-peq red arriba"></div>
+      <div class="franja-hor-peq red abajo"></div>
+      <img class="escudo" src="img/escudo.png" />
+    </div>
+    <div id="republica" class="bandera yellow">
+      <div class="franja-hor-tercio red arriba"></div>
+      <div class="franja-hor-tercio abajo purple"></div>
+      <img class="escudo-tercio" src="img/escudo-rep.png" />
+    </div>
+    <div id="italia" class="bandera white">
+      <div class="franja-ver-tercio green izq"></div>
+      <div class="franja-ver-tercio red der"></div>
+    </div>
+    <div id="finlandia" class="bandera white">
+      <div class="linea ver blue" style="left: 80px"></div>
+      <div class="linea hor blue" style="top: -120px"></div>
+    </div>
+    <div id="usa" class="bandera white">
+      <div class="barra red"></div>
+      <div class="barra red"></div>
+      <div class="barra red"></div>
+      <div class="barra red"></div>
+      <div class="barra red"></div>
+      <div class="barra red"></div>
+      <div class="barra red"></div>
+      <div class="cuadrado blue"></div>
+      <img class="estrellas" src="img/estrellas.webp">
+    </div>
+    <div id="francia" class="bandera-avion red">
+      <div class="medio white">
+        <div class="centro blue"></div>
+      </div>
+    </div>
+  </body>
+</html>
