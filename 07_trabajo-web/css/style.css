@@ -1,0 +1,352 @@
+/* GENERAL */
+
+body {
+    font-family: 'M PLUS Rounded 1c';
+    color: #fff;
+    margin: 0px;
+    background-color: #000;
+    font-size: 19px;
+    scroll-behavior: smooth;
+
+}
+
+.container {
+    width: 1500px;
+    background-color: #111;
+    margin: 0 auto;
+}
+
+/* CABECERA */
+
+.top {
+    display: flex;
+    height: 140px;
+}
+
+.logo {
+    margin: 35px;
+}
+
+.logo img {
+    height: 65px;
+}
+
+.menu {
+    margin: 0 auto;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu a:active,
+.menu a:hover {
+    border-bottom: 1px solid orange;
+}
+
+header nav {
+    margin: 50px 10px;
+}
+
+.menu nav ul {
+    display: flex;
+    padding: 0px;
+}
+
+.menu nav li {
+    list-style-type: none;
+    margin: 0 40px;
+}
+
+/* FOOTER */
+
+footer {
+    padding-top: 30px;
+}
+
+footer .widgets {
+    margin: 0 80px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.widg {
+    width: 30%;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.widg-horarios ul li {
+    margin: 20px 0;
+}
+
+li:hover i.fa {
+    color: orange;
+    transition: 0.3s;
+}
+
+.widgets a:hover {
+    color: orange;
+}
+
+.designed {
+    text-align: center;
+    border-top: 1px solid #66666682;
+    padding: 15px;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.designed a {
+color: #aaa;
+}
+.designed a:hover {
+    color: orange
+}
+
+/* INICIO */
+
+.slider {
+    position: relative;
+    height: 500px;
+    background-size: cover;
+}
+
+.slider::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../img/slide.avif");
+    background-position: center;
+    background-size: cover;
+    filter: brightness(50%);
+}
+
+.tit-slider {
+    position: relative;
+    text-align: center;
+    padding-top: 125px;
+    font-size: 45px;
+}
+
+.texto-bienvenida {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    
+}
+
+.texto-bienvenida h3 {
+text-align: center;
+}
+
+.content {
+    padding: 30px 0 0;
+}
+
+.content h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+
+
+/* CONÓCENOS */
+
+.subrayado {
+    border-bottom: 1px solid orange;
+
+}
+
+.divider {
+    margin: 0 auto;
+    border-top: 1px solid orange;
+    width: 60%;
+    margin-top: 70px;
+}
+
+.thirds-container {
+    display: flex;
+}
+
+.txt-conocenos .two-thirds {
+    width: 65%;
+    margin: 0 29px 0 0;
+}
+
+.txt-conocenos .one-third {
+    width: 30%;
+    margin: 0 0 0 29px;
+}
+
+.full-width {
+    width: calc(95%+30px);
+}
+
+.txt-conocenos,
+.txt-equipo {
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.img-conocenos {
+    width: 100%;
+    box-shadow: 0 0 30px #ffa5006b;
+    border-radius: 85px;
+}
+
+.txt-equipo .two-thirds {
+    width: 65%;
+    margin: 0 0 0 29px;
+}
+
+.txt-equipo .one-third {
+    width: 30%;
+    margin: 0 29px 0 0;
+}
+
+/* CARTA */
+
+.section-menu {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu-menu {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.menu-menu ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    background-color: #111;
+    box-shadow: 0 15px 15px #111;
+    padding: 0;
+}
+
+ul.menu {
+    padding: 25px;
+    margin: 0 auto;
+}
+
+.menu-menu li {
+    width: 15%;
+}
+
+.menu-menu ul li a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: #fff;
+}
+
+.menu-block {
+    width: 45%;
+    padding-top: 70px;
+}
+
+.menu-block h2 {
+    font-size: 33px;
+    width: 300px;
+    height: 60px;
+    line-height: 25px;
+    background: -webkit-linear-gradient(#ffc55c, #900000);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 auto;
+}
+
+.menu-block p {
+    height: 90px;
+}
+
+/* CONTACTO & RESERVAS */
+
+.col-contacto {
+    display: flex;
+    margin-top: 60px;
+
+}
+
+.datos-contacto {
+    width: 50%;
+}
+
+.datos-contacto ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.datos-contacto a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.datos-contacto h3 {
+    width: 385px;
+    text-align: center;
+}
+
+.contacto-form h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.datos-contacto ul.horarios {
+    text-align: center;
+    width: 385px;
+}
+
+.horarios ul li {
+    margin: 20px 0;
+}
+
+.lista-iconos li {
+    margin-left: 35px;
+}
+
+i.fa,
+i.fa-solid {
+    float: left;
+}
+
+i.fa-solid.fa-location-dot {
+    margin-top: 12px;
+}
+
+ul.rrss-fa {
+    margin: 0 auto;
+    width: 440px;
+}
+
+ul.rrss-fa .fa {
+    margin: 0 15px;
+}
+
+.mapa {
+    margin-top: 50px;
+}
+
+.mapa h3 {
+    text-align: center;
+}

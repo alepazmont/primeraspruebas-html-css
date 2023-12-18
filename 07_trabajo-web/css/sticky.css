@@ -1,0 +1,24 @@
+nav.main_nav {
+	min-height: 63px; 
+}
+	.main_nav_wrap {
+		width: 100%;
+		display: block;
+	}
+	.main_nav_wrap ul {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			list-style: none;
+	}
+	.main_nav_wrap ul li a {
+					font-size: 1.2rem;
+					padding: 20px;
+					display: block;
+					color: #fff;
+					transition: all 0.3s;
+					background-color: transparent;
+	}
+		
